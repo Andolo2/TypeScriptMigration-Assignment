@@ -12,7 +12,7 @@ export interface ProductContextType{
   featured: productItem[]
   getFeatured: (take?: number) => void
   get: (articleNumber?: string) => void
-  getAll:  (take?: number) => void
+  getAll:  () => void
   
 }
 
@@ -25,7 +25,9 @@ export const useProductContext = () => {return useContext(ProductContext)}
  const ProductProvider: React.FC<ProductProviderType> = ({children}) => {
 
     const empty_Product: productItem = {
+      tag: '',
       articleNumber: '',
+      desription:'',
       name: '',
       productName: "",
       category: "",
@@ -36,16 +38,16 @@ export const useProductContext = () => {return useContext(ProductContext)}
 
     const [product, setProduct] = useState<productItem>(empty_Product) // Get a product
     const [products , setProducts] = useState<productItem[]>([]) // Get all Products
-    const [featured , setFeatured] = useState<productItem[]>([]) // 
+    const [featured , setFeatured] = useState<productItem[]>([]) // get featured products
    
 
     const baseurl: string = "http://localhost:5000/api/products"
 
 
-    const get = async (articleNumber?: string ) => {
+    const get = async (articleNumber?: string ) => { // fetch by ArticleNUmber
 
       if(articleNumber !== undefined){
-        const res = await fetch (baseurl + `/${articleNumber}`)
+        const res = await fetch (`${baseurl}/details/${articleNumber}`)
         setProduct(await res.json())
       }
       else{
@@ -55,25 +57,25 @@ export const useProductContext = () => {return useContext(ProductContext)}
      
     }
 
-    const getAll = async (take: number = 0) => {
-        let url = baseurl
-        if(take !== 0 )
-        url = baseurl + `?take=${take}`
-
-        const res = await fetch(url)
+    const getAll = async () => {
+      
+        const res = await fetch(baseurl)
         setProducts(await res.json())
     }
 
-    const getFeatured = async (take: number = 1) => {
+    const getFeatured = async (take: number = 0) => {
     
-      let url = baseurl + `?tag=featured`
+      let url = `${baseurl}/featured`
+
       if(take !== 0 )
-      url = baseurl + `?take=${take}`
-      console.log('test')
+      url += `/${take}`
+      
 
       const res = await fetch(url)
       setFeatured(await res.json())
   }
+
+  
 
 
     return <ProductContext.Provider value={{product, products, featured,  get, getAll, getFeatured}}>
