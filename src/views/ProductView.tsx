@@ -2,9 +2,6 @@
 import NavBarSec from '../sections/NavBarSec'
 import ProductPageSec from '../sections/ProductPage/ProductPageSec'
 import React, {useState, useContext} from 'react'
-
-
-import {showcaseContext} from '../assets/context/context'
 import Footer from '../sections/FooterSec'
 import { ProductContextType, useProductContext } from '../assets/context/ProductContext'
 

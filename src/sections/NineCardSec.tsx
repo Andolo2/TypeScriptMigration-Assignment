@@ -21,7 +21,7 @@ const NineCardSec: React.FC<ProductCardInterface> = ({title, items = []}) => {
             <div className="card-rows">
              {
                    
-                   //items.map(product => <NineCardSec key={product.articleNumber} item={product} />)
+                   items.map(product => <NineCard key={product.articleNumber} item={product} />)
                   
              }
               

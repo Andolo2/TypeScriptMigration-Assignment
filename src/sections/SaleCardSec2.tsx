@@ -11,7 +11,7 @@ interface ProductCardInterface {
 
 const SaleCardsSec:React.FC<ProductCardInterface> = ({title, items = []}) => {
     return(
-        <section className="sale-layout-card-1">
+        <section className="sale-layout-card-2">
         <div className="container-fluid">
            <div className="grey-card">
                <h2>2 for 29USD</h2>

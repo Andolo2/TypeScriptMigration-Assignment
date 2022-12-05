@@ -11,6 +11,7 @@ import NotFoundView from './views/NotFoundView';
 import ProductView from './views/ProductView';
 import EditProductView from './views/EditProductView';
 import ProductProvider from './assets/context/ProductContext';
+import ProductAPIProvider from './assets/context/ProductContextAPI';
 
 const App: React.FC = () => {
 
@@ -64,6 +65,7 @@ const App: React.FC = () => {
     <BrowserRouter>
     
         <ShoppingCartProvider>
+          <ProductAPIProvider>
           <ProductProvider>
             <Routes>
                 <Route path='/' element={<HomeView  />}  />
@@ -74,6 +76,7 @@ const App: React.FC = () => {
                 <Route path='EditProductView' element={<EditProductView />} />
             </Routes>
           </ProductProvider>
+          </ProductAPIProvider>
         </ShoppingCartProvider>
     
   </BrowserRouter>

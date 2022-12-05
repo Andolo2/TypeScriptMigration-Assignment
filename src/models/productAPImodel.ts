@@ -1,7 +1,7 @@
 export interface Product {
    
 
-    articleNumber: number
+    articleNumber: string
     name: string
     description: string
     category: string

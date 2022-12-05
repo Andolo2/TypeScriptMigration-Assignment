@@ -27,7 +27,19 @@ const productContext = useProductContext() as ProductContextType
 
 
   useEffect(() => {
-    productContext.getFeatured(3)
+    productContext.getFeatured(8)
+    
+   
+  }, [])
+
+  useEffect(() => {
+    productContext.getShowcaseTop(3)
+    
+   
+  }, [])
+
+  useEffect(() => {
+    productContext.getShowcaseBottom(3)
     
    
   }, [])
@@ -44,8 +56,8 @@ const productContext = useProductContext() as ProductContextType
       <ProdCard title='Featured Products' items={productContext.featured}/> 
       <AdCards></AdCards>
       <SpecCard></SpecCard>
-      <SaleCardsSec1  items={productContext.featured} title={''}/>
-      <SaleCardsSec2  items={productContext.featured} title={''}/>
+      <SaleCardsSec1  items={productContext.showcaseTop} title={''}/>
+      <SaleCardsSec2  items={productContext.showcaseBottom} title={''}/>
       <DividerSec></DividerSec>
       <NineCardSec items={productContext.featured} title={''}/>
       <CircleLinksSec />
