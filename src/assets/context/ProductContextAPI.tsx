@@ -71,7 +71,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   const update = async (e: React.FormEvent) => {
 
     e.preventDefault()
-    const result = await fetch(`${baseUrl} / ${product.articleNumber}`, {
+    const result = await fetch(`${baseUrl}/${product.articleNumber}`, {
         method: 'put',
         headers: {
           'Content-Type': 'application/json'
@@ -84,14 +84,20 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   }
 
   const remove = async (articleNumber: string) => {
-
-    const result = await fetch(`${baseUrl} / ${articleNumber}`, {
+    
+    const result = await fetch(`${baseUrl}/${articleNumber}`, {
         method: 'delete',
-      
+        
     })
-    if(result.status === 204)
+    
+    if(result.status === 204){
       setProduct(product_default)
-
+    }
+    else if(result.status === 404){
+     
+    }
+    
+      
   }
 
   return (

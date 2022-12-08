@@ -19,7 +19,7 @@ const getData = async () => {
   const data = await result.json()
 
   for(let product of data) {
-    console.log(product)
+  
   }
 }
 getData()

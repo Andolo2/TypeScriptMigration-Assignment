@@ -20,7 +20,7 @@ const ProductDetailsView: React.FC = () => {
     },[])
     
 
-    console.log(id)
+    
   return (
     
     <>

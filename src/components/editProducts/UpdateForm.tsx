@@ -16,7 +16,7 @@ const  UpdateForm = () => {
 
     return (
         <form onSubmit={update} className="d-grid mb-5">
-            <h3 className='display-6 mb-4'>Create Product</h3>
+            <h3 className='display-6 mb-4'>Update Product</h3>
                 <input type='hidden' value={product.articleNumber}></input>
                <input value={product.category} onChange={(e) => setProduct({...product,category: e.target.value}) }></input>
                <input value={product.description} onChange={(e) => setProduct({...product,description: e.target.value}) }></input>
