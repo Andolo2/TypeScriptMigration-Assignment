@@ -7,11 +7,11 @@ const  UpdateForm = () => {
     //const articleNumber = useParams()
     const {product, setProduct, update, get} = React.useContext(ProductAPIContext) as IProductContext
 
-/*     useEffect(() => {
+   /*   useEffect(() => {
       get(articleNumber)
     
       
-    }, [get, articleNumber]) */
+    }, [get, articleNumber])  */
     
 
     return (

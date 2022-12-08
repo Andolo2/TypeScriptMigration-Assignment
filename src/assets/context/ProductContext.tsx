@@ -54,20 +54,24 @@ export const useProductContext = () => {return useContext(ProductContext)}
     const get = async (articleNumber?: string ) => { // fetch by ArticleNUmber
 
       if(articleNumber !== undefined){
-        const res = await fetch (`${baseurl}/details/${articleNumber}`)
+        const res = await fetch (`${baseurl}/product/details/${articleNumber}`)
         setProduct(await res.json())
+       
       }
       else{
         prompt('error, contact admin')
       }
-      console.log('null')
+     
      
     }
+
+    
 
     const getAll = async () => {
       
         const res = await fetch(baseurl)
         setProducts(await res.json())
+       
     }
 
     const getFeatured = async (take: number = 0) => {

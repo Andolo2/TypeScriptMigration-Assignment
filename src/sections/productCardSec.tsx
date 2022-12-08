@@ -22,7 +22,7 @@ const ProdSection: React.FC<ProductCardInterface> = ({title, items = []}) => {
    <div className='container'>
     <div className='product-rows'>
       {
-         //items && items.map((product ) => <ProdCards key={product.articleNumber}  item={product}/>)
+         
          items.map(product => <ProdCards key={product.articleNumber} item={product} />)
         
       }

@@ -7,23 +7,24 @@ const  ProductList = () =>  {
 
     const {products, getAll, remove} = React.useContext(ProductAPIContext) as IProductContext
 
-    useEffect(() => {
+     useEffect(() => {
         getAll()
         
-    },[getAll])
-
+    },[])
+ 
     const removeProduct = (articleNumber:string) => {
       remove(articleNumber)
      
     }
-
+ 
   return (
     <>
         
         <h3 className='display-6 mb-4'>List of products</h3>
 
         {
-            products.map((product: Product) => (<div onClick={() => removeProduct(product.articleNumber)} key={product.articleNumber}>{product.category}{product.name}{product.description}{product.price}{product.rating}{product.imageName}</div>))
+            products.map((product: Product)  => (<div onClick={() => removeProduct(product.articleNumber)} key={product.id}>{product.category}{product.name}{product.description}{product.price}{product.rating}{product.imageName}</div>))
+            
         }
 
     </>

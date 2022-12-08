@@ -27,7 +27,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   const baseUrl = 'http://localhost:5000/api/products'
 
 
-  const product_default: Product = {articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
+  const product_default: Product = {id: 0, articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   const productRequest_default: ProductRequest = {name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   
 
@@ -59,10 +59,12 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   }
 
   const getAll = async () => {
-
+    
     const result = await fetch(`${baseUrl} `)
     if(result.status === 200)
       setProducts(await result.json())
+      
+     
 
   }
 

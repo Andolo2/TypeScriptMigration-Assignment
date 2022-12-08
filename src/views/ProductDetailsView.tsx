@@ -10,7 +10,7 @@ import { ProductContextType, useProductContext } from '../assets/context/Product
 const ProductDetailsView: React.FC = () => {
 
     const {id} = useParams<string>()
-    const productContext = useProductContext() as ProductContextType
+   const productContext = useProductContext() as ProductContextType
 
 
 
