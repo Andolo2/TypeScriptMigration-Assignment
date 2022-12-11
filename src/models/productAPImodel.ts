@@ -1,7 +1,7 @@
 export interface Product {
     
    
-    _id: string
+    
     articleNumber: string
     name: string
     description: string

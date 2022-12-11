@@ -25,7 +25,7 @@ const  ProductList:React.FC = () =>  {
         {
             products.map((product: Product)  => ( <div
              
-               key={product._id}>
+              key={product.articleNumber}>
                 
               <div className='d-grid mb-3'  key={product.articleNumber}>
               {<div className=''>{`Name: ${product.name}`}</div>}

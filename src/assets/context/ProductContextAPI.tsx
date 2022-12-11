@@ -29,7 +29,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   const baseUrl = 'http://localhost:5000/api/products'
 
 
-  const product_default: Product = {_id: '', articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
+  const product_default: Product = { articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   const productRequest_default: ProductRequest = {name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   
 
