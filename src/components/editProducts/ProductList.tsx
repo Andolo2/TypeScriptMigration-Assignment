@@ -24,8 +24,8 @@ const  ProductList:React.FC = () =>  {
 
         {
             products.map((product: Product)  => ( <div
-               onClick={() => removeProduct(product.articleNumber)}
-               key={product.id}>
+             
+               key={product._id}>
                 
               <div className='d-grid mb-3'  key={product.articleNumber}>
               {<div className=''>{`Name: ${product.name}`}</div>}
@@ -34,6 +34,7 @@ const  ProductList:React.FC = () =>  {
               {<div className=''>{`Price: ${product.price}`}</div>}
               {<div className=''>{`Rating: ${product.rating}`}</div>}
               <img src={product.imageName} />
+              <button onClick={() => removeProduct(product.articleNumber)} type='submit' className='btn btn-danger py-2 mt-3'>Delete Product</button>
               </div> 
               
             </div>))

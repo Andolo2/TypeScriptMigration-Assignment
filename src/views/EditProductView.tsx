@@ -6,7 +6,7 @@ import CreateForm from '../components/EditProducts/CreateForm'
 import UpdateForm  from '../components/EditProducts/UpdateForm'
 function EditProductView() {
   return (
-    <div>
+    <div className='Edit-Products'>
       <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
 
       

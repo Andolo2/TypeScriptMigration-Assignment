@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import {iProductProviderProps} from '../../models/productAPImodel'
 import {Product, ProductRequest} from '../../models/productAPImodel'
 
@@ -14,8 +15,9 @@ export interface IProductContext{
     create : (e: React.FormEvent) => void
     get: (articleNumber: string) => void
     getAll: () => void
-    update: ( e: React.FormEvent) => void
+    update: (e: React.FormEvent) => void // e: React.FormEvent
     remove: (articleNumber: string) => void
+   
 
 }
 
@@ -27,7 +29,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   const baseUrl = 'http://localhost:5000/api/products'
 
 
-  const product_default: Product = {id: 0, articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
+  const product_default: Product = {_id: '', articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   const productRequest_default: ProductRequest = {name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   
 
@@ -48,6 +50,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
     })
     if(result.status === 201)
       setProductRequest(productRequest_default)
+      console.log('product created');
 
   }
 
@@ -56,6 +59,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
     const result = await fetch(`${baseUrl} / ${articleNumber} `)
         if(result.status === 200)
           setProduct(await result.json())
+          
   }
 
   const getAll = async () => {
@@ -69,19 +73,31 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   }
 
   const update = async (e: React.FormEvent) => {
-
+   
     e.preventDefault()
-    const result = await fetch(`${baseUrl}/${product.articleNumber}`, {
+    const result = await fetch(`${baseUrl}`, {
         method: 'put',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'Application/json'
         },
         body: JSON.stringify(product)
+        
+        
     })
-    if(result.status === 200)
+    if(result.status === 200){
+  
       setProduct(await result.json())
-    
+    }
+    else if(result.status === 400){
+      console.log('status 400');
+     
+    }
+   
   }
+    
+  
+    
+  
 
   const remove = async (articleNumber: string) => {
     
