@@ -3,6 +3,7 @@ import {featuredContext, featuredNineContext, productContext, showcaseContext} f
 import { BrowserRouter, Routes, Route, Form } from 'react-router-dom';
 import './App.min.css';
 
+
 import HomeView from './views/HomeView'
 import { ShoppingCartProvider } from './assets/context/shoppingCartContext';
 import ContactView from './views/ContactView';

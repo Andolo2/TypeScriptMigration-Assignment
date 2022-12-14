@@ -44,6 +44,13 @@ const productContext = useProductContext() as ProductContextType
    
   }, [])
 
+  useEffect(() => {
+    productContext.getLatestProduct(9)
+    
+   
+  }, [])
+
+
 
   return (
     
@@ -59,7 +66,7 @@ const productContext = useProductContext() as ProductContextType
       <SaleCardsSec1  items={productContext.showcaseTop} title={''}/>
       <SaleCardsSec2  items={productContext.showcaseBottom} title={''}/>
       <DividerSec></DividerSec>
-      <NineCardSec items={productContext.featured} title={''}/>
+      <NineCardSec items={productContext.latestProduct} title={''}/>
       <CircleLinksSec />
       <FooterSec /> 
 

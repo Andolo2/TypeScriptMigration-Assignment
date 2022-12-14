@@ -9,6 +9,7 @@ export interface Product {
     price: number
     rating: number
     imageName: string
+    tag: string
 
 }
 
@@ -20,6 +21,7 @@ export interface ProductRequest {
     price: number
     rating: number
     imageName: string
+    tag: string
 
 
 }

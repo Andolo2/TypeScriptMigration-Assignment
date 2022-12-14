@@ -1,4 +1,22 @@
-.d-grid{
-    width: 500px;
-    margin-top: 3rem;
+.Edit-Products{
+    display: grid;
+    .d-grid{
+        align-content: center;
+        justify-content: center;
+    }
+
+    .ProductList{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    
+        grid-gap: 1rem;
+
+        .edit-card{
+            border: 2px solid black;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
 }

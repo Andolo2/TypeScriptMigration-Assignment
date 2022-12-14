@@ -1,3 +1,4 @@
+import { match } from 'assert'
 import React, { createContext, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {iProductProviderProps} from '../../models/productAPImodel'
@@ -29,8 +30,8 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   const baseUrl = 'http://localhost:5000/api/products'
 
 
-  const product_default: Product = { articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
-  const productRequest_default: ProductRequest = {name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
+  const product_default: Product = { tag: '',articleNumber: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
+  const productRequest_default: ProductRequest = {tag: '', name: '', description: '', category: '', price: 0, rating: 0, imageName: ''}
   
 
 
@@ -73,31 +74,36 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   }
 
   const update = async (e: React.FormEvent) => {
-   
-    e.preventDefault()
-    const result = await fetch(`${baseUrl}`, {
-        method: 'put',
-        headers: {
-          'Content-Type': 'Application/json'
-        },
-        body: JSON.stringify(product)
-        
-        
-    })
-    if(result.status === 200){
+    console.log('kör 1')
+    e.preventDefault();
+    
+
+    const result = await fetch(`${baseUrl}/${product.articleNumber}`, {
+      method: 'put',
+      headers: {
+        'Content-Type': 'Application/json'
+      },
+      body: JSON.stringify(product)
+      
+      
+      
+  })
+  if(result.status === 200){
+    console.log('kör 2')
   
-      setProduct(await result.json())
-    }
-    else if(result.status === 400){
+    setProduct(await result.json())
+  }
+  else if(result.status === 400){
+    console.log('kör 3')
       console.log('status 400');
      
     }
    
+
+   
   }
     
-  
-    
-  
+
 
   const remove = async (articleNumber: string) => {
     

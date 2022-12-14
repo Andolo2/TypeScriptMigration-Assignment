@@ -12,9 +12,11 @@ export interface ProductContextType{
   featured: productItem[]
   showcaseTop: productItem[]
   showcaseBottom: productItem[]
+  latestProduct: productItem[]
   getFeatured: (take?: number) => void
   getShowcaseTop: (take?: number) => void
   getShowcaseBottom: (take?: number) => void
+  getLatestProduct: (take?: number) => void
   get: (articleNumber?: string) => void
   getAll:  () => void
   
@@ -46,6 +48,7 @@ export const useProductContext = () => {return useContext(ProductContext)}
     const [featured , setFeatured] = useState<productItem[]>([]) // get featured products
     const [showcaseTop , setShowcaseTop] = useState<productItem[]>([]) // get showcase products
     const [showcaseBottom , setShowcaseBottom] = useState<productItem[]>([]) // get showcase products
+    const [latestProduct , setlatestProduct] = useState<productItem[]>([]) // get showcase products
    
 
     const baseurl: string = "http://localhost:5000/api/products"
@@ -110,13 +113,25 @@ const getShowcaseBottom = async (take: number = 0) => {
   setShowcaseBottom(await res.json())
 }
 
+const getLatestProduct = async (take: number = 0) => {
+    
+  let url = `${baseurl}/latestProduct`
+
+  if(take !== 0 )
+  url += `/${take}`
+  
+
+  const res = await fetch(url)
+  setlatestProduct(await res.json())
+}
 
 
 
 
 
 
-    return <ProductContext.Provider value={{product, products, featured,  get, getAll, getFeatured, showcaseTop, getShowcaseTop, showcaseBottom, getShowcaseBottom}}>
+
+    return <ProductContext.Provider value={{product, products, featured,  get, getAll, getFeatured, showcaseTop, getShowcaseTop, showcaseBottom, getShowcaseBottom, latestProduct, getLatestProduct}}>
       {children}
     </ProductContext.Provider>
 
