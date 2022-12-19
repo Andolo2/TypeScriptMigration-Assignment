@@ -5,7 +5,7 @@ import React from 'react'
 
 function ContactView() {
 
-  //window.top.document.title = 'Contacts || fixxo.';
+  document.title = 'Contacts || fixxo.';
   return (
     
     <div>

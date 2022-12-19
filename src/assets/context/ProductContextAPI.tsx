@@ -89,15 +89,11 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
       
   })
   if(result.status === 200){
-    console.log('kör 2')
+    
   
     setProduct(await result.json())
   }
-  else if(result.status === 400){
-    console.log('kör 3')
-      console.log('status 400');
-     
-    }
+  
    
 
    

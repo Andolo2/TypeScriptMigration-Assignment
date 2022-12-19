@@ -20,7 +20,7 @@ const ProductDetailsView: React.FC = () => {
     },[])
     
 
-    
+    document.title = ' Product Details || fixxo.';
   return (
     
     <>

@@ -33,13 +33,13 @@ const productContext = useProductContext() as ProductContextType
   }, [])
 
   useEffect(() => {
-    productContext.getShowcaseTop(3)
+    productContext.getShowcaseTop(4)
     
    
   }, [])
 
   useEffect(() => {
-    productContext.getShowcaseBottom(3)
+    productContext.getShowcaseBottom(4)
     
    
   }, [])
@@ -51,34 +51,23 @@ const productContext = useProductContext() as ProductContextType
   }, [])
 
 
-
+  document.title = ' Home || fixxo.';
   return (
-    
-    
     <div>
-    
       <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
         <JumboSec></JumboSec>
-         <WinterCard></WinterCard>
-      <ProdCard title='Featured Products' items={productContext.featured}/> 
-      <AdCards></AdCards>
-      <SpecCard></SpecCard>
-      <SaleCardsSec1  items={productContext.showcaseTop} title={''}/>
-      <SaleCardsSec2  items={productContext.showcaseBottom} title={''}/>
-      <DividerSec></DividerSec>
-      <NineCardSec items={productContext.latestProduct} title={''}/>
-      <CircleLinksSec />
+          <WinterCard></WinterCard>
+           <ProdCard title='Featured Products' items={productContext.featured}/> 
+             <AdCards></AdCards>
+               <SpecCard></SpecCard>
+             <SaleCardsSec1  items={productContext.showcaseTop} title={''}/>
+           <SaleCardsSec2  items={productContext.showcaseBottom} title={''}/>
+          <DividerSec></DividerSec>
+         <NineCardSec items={productContext.latestProduct} title={''}/>
+       <CircleLinksSec />
       <FooterSec /> 
-
-      
-      
-     
-      
-      
-      
       </div>
   )
-  
 }
 
 export default HomeView

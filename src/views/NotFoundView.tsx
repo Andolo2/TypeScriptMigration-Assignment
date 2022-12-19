@@ -5,6 +5,8 @@ import notFound from  '../assets/images/notFound/404notfound.png'
 
 function NotFoundView() {
 
+  document.title = ' Not Found || fixxo.';
+
  // window.top.document.title = 'NOT FOUND || fixxo.';
   return (
     <div>

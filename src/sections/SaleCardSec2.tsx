@@ -32,7 +32,7 @@ const SaleCardsSec:React.FC<ProductCardInterface> = ({title, items = []}) => {
                </div>
                <div className='sale-card-row-2'>
                {
-                items.map(product => <Salecard2 key={product.articleNumber} item={product} />)
+                //items.map(product => <Salecard2 key={product.articleNumber} item={product} />)
                } 
                </div>
            </div>

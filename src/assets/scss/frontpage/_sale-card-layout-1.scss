@@ -70,7 +70,11 @@
 
             .sale-card-row-1, /*Only displayes product cards. */
             .sale-card-row-2{
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                grid-column-gap: 10px;
+                grid-row-gap: 12rem;
                 
                 @include left-productBox;
                 

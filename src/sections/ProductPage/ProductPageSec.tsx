@@ -21,9 +21,7 @@ const ProductPageSec: React.FC<ProductCardInterface> = ({ items = []}) => {
               items.map(product => <ProductShowcase key={product.articleNumber} item={product} />)
               
             }
-            {
-               items.map(product => <ProductShowcase key={product.articleNumber} item={product} />)
-            } 
+           
        </div>
        <BottomMenu />
     </div>
