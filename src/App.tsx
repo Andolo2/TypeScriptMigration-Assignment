@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react'
-import {featuredContext, featuredNineContext, productContext, showcaseContext} from  './assets/context/context'
-import { BrowserRouter, Routes, Route, Form } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import './App.min.css';
 
 
@@ -15,18 +14,7 @@ import ProductProvider from './assets/context/ProductContext';
 import ProductAPIProvider from './assets/context/ProductContextAPI';
 
 
-const getData = async () => {
-  const result = await fetch('http://localhost:5000/api/products')
-  const data = await result.json()
-
-  for(let product of data) {
-  
-  }
-}
-getData()
 const App: React.FC = () => {
-
-
 
   return (
     <React.StrictMode>

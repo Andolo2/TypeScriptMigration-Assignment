@@ -9,7 +9,7 @@ import AlertNoticication from './AlertNoticication'
 
 const ContactForm: React.FC = () => { 
   let currentPage = "Contact Us"
- // window.top.document.title = `${currentPage} || Fixxo` 
+   document.title = `${currentPage} || Fixxo` 
 
  const DEFAULT_VALUES: contactFormDataType =  {name: '', email: '', comments: ''}
 

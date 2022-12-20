@@ -1,6 +1,6 @@
-import { match } from 'assert'
+
 import React, { createContext, useContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
+
 import {iProductProviderProps} from '../../models/productAPImodel'
 import {Product, ProductRequest} from '../../models/productAPImodel'
 
@@ -16,7 +16,7 @@ export interface IProductContext{
     create : (e: React.FormEvent) => void
     get: (articleNumber: string) => void
     getAll: () => void
-    update: (e: React.FormEvent) => void // e: React.FormEvent
+    update: (e: React.FormEvent) => void 
     remove: (articleNumber: string) => void
    
 
@@ -74,7 +74,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   }
 
   const update = async (e: React.FormEvent) => {
-    console.log('kör 1')
+  
     e.preventDefault();
     
 
@@ -90,13 +90,14 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
   })
   if(result.status === 200){
     
-  
+    
     setProduct(await result.json())
+   
   }
-  
-   
+  else{
 
-   
+  }
+
   }
     
 
@@ -114,8 +115,7 @@ const ProductAPIProvider = ({children} : iProductProviderProps) => {
     else if(result.status === 404){
      
     }
-    
-      
+     
   }
 
   return (

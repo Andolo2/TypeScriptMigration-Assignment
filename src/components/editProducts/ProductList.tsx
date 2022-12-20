@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import {IProductContext, ProductAPIContext} from '../../assets/context/ProductContextAPI'
 import { Product } from '../../models/productAPImodel'
-import UpdateForm from './UpdateForm'
+
 
 const  ProductList:React.FC = () =>  {
 
@@ -13,15 +13,10 @@ const  ProductList:React.FC = () =>  {
         
     },[])
 
-    
- 
     const removeProduct = (articleNumber:string) => {
       remove(articleNumber) 
      
     }
-
-
-  
  
   return (
     <>
@@ -43,7 +38,7 @@ const  ProductList:React.FC = () =>  {
               {<div className=''>{`Rating: ${product.rating}`}</div>}
               {<div className=''>{`Tag: ${product.tag}`}</div>}
               <img src={product.imageName} />
-              <button onClick={() => removeProduct(product.articleNumber)}  type='submit' className='btn btn-danger py-2 mt-3'>Delete Product</button>
+              <button  onClick={() => removeProduct(product.articleNumber)}  type='submit' className='btn btn-danger py-2 mt-3'>Delete Product</button>
               
               <form method='puty' onSubmit={update} className="d-grid mb-5">
             <h3 className='display-6 mb-4'>Update Product</h3>

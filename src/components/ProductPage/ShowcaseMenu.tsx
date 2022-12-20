@@ -1,16 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-type Item = {
-   item: any
- }
 
-const ShowcaseMenu:React.FC <Item> = ({item}) => {
+
+const ShowcaseMenu: React.FC = () => {
    return(
    <div className="showcase-menu">
          <div className="showcase-menu-content">
             <h2>Modern Black Blouse</h2>
-            <p>{item.brand}</p>
+            
 
             <div className="product-stars">
                <i className="fa-solid fa-star"></i>
@@ -19,7 +17,7 @@ const ShowcaseMenu:React.FC <Item> = ({item}) => {
                <i className="fa-solid fa-star"></i>
                <i className="fa-solid fa-star"></i>
             </div>
-            <p id="set-price">{item.price}</p>
+            
          </div>
          <div className="showcase-text">
             Discovered had get considered projection who favourable. Necessary up knowledge it tolerably. Unwilling departure education is be dashwoods or an. Use off agreeable law unwilling sir deficient curiosity instantly. <NavLink to="#"> (read more)</NavLink>

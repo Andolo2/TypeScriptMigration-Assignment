@@ -7,7 +7,7 @@ function NotFoundView() {
 
   document.title = ' Not Found || fixxo.';
 
- // window.top.document.title = 'NOT FOUND || fixxo.';
+
   return (
     <div>
       <NavBarSec link={''} icon={''} quantity={0}></NavBarSec>
